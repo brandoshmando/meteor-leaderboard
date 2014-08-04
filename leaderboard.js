@@ -33,6 +33,13 @@ if (Meteor.isClient) {
       }else{
         Session.set("order", {score: -1, name: 1});
       };
+    },
+
+    'click input.random' : function(){
+      var players = Players.find({});
+      for (var i=0; i < players.count; i++){
+        players[i].update({ $set: { score: Math.floor(Random.fraction()*10)*5}});
+      };
     }
   });
 
