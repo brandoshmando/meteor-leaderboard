@@ -23,15 +23,15 @@
   {{else}}
   <div class="none">Click a player to select</div>
   {{/if}}
+  <div>
+    <input type="button" class="sort" value="Order differently" />
+  </div>
 </template>
 
 <template name="player">
   <div class="player {{selected}}">
     <span class="name">{{name}}</span>
     <span class="score">{{score}}</span>
-  </div>
-  <div>
-    <input type="button" class="sort" value="Order differently" />
   </div>
 </template>
 
