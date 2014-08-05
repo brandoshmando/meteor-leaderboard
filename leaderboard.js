@@ -54,6 +54,10 @@ if (Meteor.isClient) {
       Players.insert({name: name, score: Math.floor(Random.fraction()*10)*5});
       $('#name').val('');
     },
+
+    'click input.remove': function(){
+      Players.remove({_id: Session.get("selected_player")});
+    }
   });
 }
 
