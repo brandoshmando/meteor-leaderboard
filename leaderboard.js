@@ -39,13 +39,21 @@ if (Meteor.isClient) {
       Players.find({}).forEach(function(player){
         Players.update( {_id: player._id}, { $set: { score: Math.floor(Random.fraction()*10)*5}});
       });
-    }
+    },
   });
 
   Template.player.events({
     'click': function () {
       Session.set("selected_player", this._id);
     }
+  });
+
+  Template.new_player.events({
+    'click input.add': function(){
+      var name = $('#name').val();
+      Players.insert({name: name, score: Math.floor(Random.fraction()*10)*5});
+      $('#name').val('');
+    },
   });
 }
 

@@ -28,12 +28,19 @@
     <input type="button" class="sort" value="Change Order" />
     <input type="button" class="random" value="Randomize Scores" />
   </div>
+  {{> new_player}}
 </template>
 
 <template name="player">
   <div class="player {{selected}}">
     <span class="name">{{name}}</span>
     <span class="score">{{score}}</span>
+  </div>
+</template>
+<template name="new_player">
+  <div class="new_player" >
+    <input id="name" type="text" placeholder="Player Name">
+    <input class="add" type="button" value="Add Player">
   </div>
 </template>
 
